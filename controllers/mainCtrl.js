@@ -1,4 +1,6 @@
 var user = require('../user.js');
+var skillz = require('../skillz.js');
+var secrets = require('../secrets.js');
 
 module.exports = {
 	getName: function(req, res, next){
@@ -101,9 +103,28 @@ module.exports = {
 			user.restaurants.push(req.body);
 		}
 		res.send(user.restaurants)
+	},
+	///////////////////////////// step 6
+	getSkillz: function(req, res, next){
+		if (req.query.experience){
+			var result = skillz.filter(function(elem){
+				return elem.experience === req.query.experience;
+			})
+			res.json(result)
+		} else {
+			res.json(skillz)
+		}
+	},
+	createSkillz: function(req, res, next){
+		var propNames = Object.getOwnPropertyNames(req.body)
+		if (propNames.length === 3 && propNames[0] === 'name' && propNames[1] === 'experience' && propNames[2] === 'id'){
+			skillz.push(req.body);
+		}
+		res.json(skillz)
+	},
+	getSecrets: function(req, res, next){
+		res.json(secrets)
 	}
-	
-	
 	
 	
 	
