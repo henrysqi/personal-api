@@ -1,7 +1,7 @@
 var user = {
   name: "Henry Qi",
   location: "San Francisco",
-  occupations: ["researcher", "developer"],
+  occupations: ["designer", "researcher", "developer"],
   hobbies: [
     {
       name: "hobby1",
@@ -36,17 +36,17 @@ var user = {
     {
       name: "name1",
       type: "type1",
-      rating: "rating1"
+      rating: 9
     },
     {
       name: "name2",
       type: "type2",
-      rating: "rating2"
+      rating: 1
     },
     {
       name: "name3",
       type: "type3",
-      rating: "rating3"
+      rating: 6
     }
   ]
 };

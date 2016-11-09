@@ -15,11 +15,11 @@ app.get('/location', mainCtrl.getLocation);
 app.get('/occupations', mainCtrl.getOccupations);
 app.get('/occupations/latest', mainCtrl.getOccupationsLatest);
 app.get('/hobbies', mainCtrl.getHobbies);
-app.get('/hobbies/:type', mainCtrl.getHobbiesType)
-
-
-
-
+app.get('/hobbies/:type', mainCtrl.getHobbiesByType);
+app.get('/family', mainCtrl.getFamily);
+app.get('/family/:gender', mainCtrl.getFamilyByGender);
+app.get('/restaurants', mainCtrl.getRestaurants);
+app.get('/restaurants/:name', mainCtrl.getRestaurantsByName);
 
 
 
