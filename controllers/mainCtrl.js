@@ -67,8 +67,81 @@ module.exports = {
 			return elem.name === name;
 		})
 		res.json({restaurants_by_name: result})
+	},
+	////////////////////////////////////// step 5
+	updateName: function(req, res, next){
+		user.name = req.body.name;
+		res.send();
+	},
+	updateLocation: function(req, res, next){
+		user.location = req.body.location;
+		res.send();
+	},
+	createHobby: function(req, res, next){
+		var propNames = Object.getOwnPropertyNames(req.body)
+		if (propNames.length === 2 && propNames[0] === 'name' && propNames[1] === 'type'){
+			user.hobbies.push(req.body);
+		}
+		res.send(user.hobbies)
+	},
+	createOccupation: function(req, res, next){
+		user.occupations.push(req.body.occupation)
+		res.send(user.occupations)
+	},
+	createFamily: function(req, res, next){
+		var propNames = Object.getOwnPropertyNames(req.body)
+		if (propNames.length === 3 && propNames[0] === 'name' && propNames[1] === 'relation' && propNames[2] === 'gender'){
+			user.family.push(req.body);
+		}
+		res.send(user.family)
+	},
+	createRestaurant: function(req, res, next){
+		var propNames = Object.getOwnPropertyNames(req.body)
+		if (propNames.length === 3 && propNames[0] === 'name' && propNames[1] === 'type' && propNames[2] === 'rating'){
+			user.restaurants.push(req.body);
+		}
+		res.send(user.restaurants)
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
